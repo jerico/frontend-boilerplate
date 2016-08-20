@@ -1,5 +1,5 @@
 {
-  "name": "thehappyhreefriends.com",
+  "name": "frontend-boilerplate",
   "version": "1.0.0",
   "description": "This is my boilerplate for frontend-only development.",
   "main": "gulpfile.js",
