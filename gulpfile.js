@@ -11,6 +11,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
 
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+
 gulp.task('stylus', function () {
   return gulp.src('css/app.styl')
     .pipe(sourcemaps.init())
@@ -24,8 +27,18 @@ gulp.task('stylus', function () {
     .pipe(browserSync.stream());
 });
 
+gulp.task('javascript', function() {
+  gulp.src('js/components/*.js')
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('js'));
 
-gulp.task('serve', ['stylus'], function() {
+  gulp.src('js/vendor/*.js')
+    .pipe(uglify())
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('js'));
+});
+
+gulp.task('serve', ['stylus', 'javascript'], function() {
 
   connect.server({}, function() {
     browserSync.init({
@@ -35,8 +48,8 @@ gulp.task('serve', ['stylus'], function() {
   });
 
   gulp.watch("css/**/*.styl", ['stylus']).on('change', browserSync.reload);
-  gulp.watch("js/*.js").on('change', browserSync.reload);
+  gulp.watch("js/**/*.js").on('change', browserSync.reload);
   gulp.watch("*.php").on('change', browserSync.reload);
 });
 
-gulp.task('default', ['stylus']);
+gulp.task('default', ['stylus', 'javascript']);

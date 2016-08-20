@@ -1,0 +1,33 @@
+{
+  "name": "thehappyhreefriends.com",
+  "version": "1.0.0",
+  "description": "This is my boilerplate for frontend-only development.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect-php": "0.0.8",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "lost": "^7.0.4",
+    "rupture": "^0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerico/frontend-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerico/frontend-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jerico/frontend-boilerplate#readme"
+}

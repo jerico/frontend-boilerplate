@@ -16,5 +16,4 @@ On initial clone, do an `npm install`. After the setup is done, you can use `gul
 
 ## TODO
 
-- Add new task to gulpfile.js that automatically concatinate all scripts in `components/*.js` to `app.js`
 - Explain structure
